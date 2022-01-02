@@ -1,0 +1,21 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+.form-section {
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+.form-box {
+	border: 1px solid black;
+	padding: 15px 20px 15px 20px;
+}
+.footer-section {
+	height: 50px;
+	line-height: 50px;
+}
+.footer-text p {
+	color: #ffffff;
+	text-align: center;
+}
