@@ -63,15 +63,6 @@
 				
 					<div class="col-sm-10">
 					
-					<?php
-						
-						$sql = "SELECT * FROM student_info";
-						$result = $conn->query($sql);
-						$row = $result->fetch_assoc();
-						print_r($row);
-						
-					
-					?>
 					
 						<table class="table table-bordered table-striped">
 								  
@@ -86,35 +77,29 @@
 									  <th>Address</th>
 									</tr>
 							</thead>
-								  
+							
 							<tbody>
+							
+							<?php
+								
+								$sql = "SELECT * from student_info";
+								$result = $conn->query($sql);
+								
+								while($row = $result->fetch_assoc()) { ?>
+									
 									<tr>
-									  <th>1</th>
-									  <td>Mark</td>
-									  <td>Otto</td>
-									  <td>@mdo</td>
-									  <td>@mdo</td>
-									  <td>@mdo</td>
-									  <td>@mdo</td>
+									  <th><?php echo $row['id']; ?></th>
+									  <td><?php echo $row['name']; ?></td>
+									  <td><?php echo $row['course_name']; ?></td>
+									  <td><?php echo $row['batch']; ?></td>
+									  <td><?php echo $row['phone']; ?></td>
+									  <td><?php echo $row['email']; ?></td>
+									  <td><?php echo $row['address']; ?></td>
 									</tr>
-									<tr>
-									  <th>1</th>
-									  <td>Mark</td>
-									  <td>Otto</td>
-									  <td>@mdo</td>
-									  <td>@mdo</td>
-									  <td>@mdo</td>
-									  <td>@mdo</td>
-									</tr>
-									<tr>
-									  <th>1</th>
-									  <td>Mark</td>
-									  <td>Otto</td>
-									  <td>@mdo</td>
-									  <td>@mdo</td>
-									  <td>@mdo</td>
-									  <td>@mdo</td>
-									</tr>
+									
+								<?php } ?>
+								  		
+								
 							</tbody>
 							
 						</table>
@@ -134,7 +119,7 @@
 		
 			<div class="footer-text">
 			
-				<p>Copyright © 2021 "Student Registration Form" by ABCDEF.</p>
+				<p>Copyright © 2021 "Student Registration Form" by ABCD.</p>
 			
 			</div>
 		
