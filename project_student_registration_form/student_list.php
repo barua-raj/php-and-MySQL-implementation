@@ -75,6 +75,7 @@
 									  <th>Phone</th>
 									  <th>Email</th>
 									  <th>Address</th>
+									  <th>Action</th>
 									</tr>
 							</thead>
 							
@@ -95,6 +96,10 @@
 									  <td><?php echo $row['phone']; ?></td>
 									  <td><?php echo $row['email']; ?></td>
 									  <td><?php echo $row['address']; ?></td>
+									  <td>
+										<a href="edit.php?student_id=<?php echo $row['id'] ?>" class="btn btn-secondary" target="_blank">Edit</a>
+										<a href="delete.php" class="btn btn-danger">Delete</a>
+									  </td>
 									</tr>
 									
 								<?php } ?>

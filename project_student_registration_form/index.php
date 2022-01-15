@@ -149,7 +149,7 @@
 		
 			<div class="footer-text">
 			
-				<p>Copyright © 2021 "Student Registration Form" by ABCDEF.</p>
+				<p>Copyright © 2021 "Student Registration Form" by ABCD.</p>
 			
 			</div>
 		
