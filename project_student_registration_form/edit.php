@@ -7,6 +7,12 @@
 	
 	$conn = new mysqli($host,$username,$password,$dbname);
 	
+	if (isset($_GET['student_id'])) {
+		
+			$id = $_GET['student_id'];
+			
+	}
+	
 ?>
 
 <!DOCTYPE html>
@@ -65,36 +71,49 @@
 					
 						<div class="form-box">
 						
+						<?php
+						
+							$sql = "SELECT * from student_info WHERE student_id = '$id'";
+							
+							if($result = $conn->query($sql)){
+								while ($row = $result->fetch_assoc()) {
+									
+								}
+							}
+							
+						
+						?>
+						
 							<form action="" method="POST">
 							
 								<div class="mb-3">
 									<label class="form-label">Name</label>
-									<input type="text" class="form-control" name="name">
+									<input type="text" class="form-control" name="name" value="<?php echo $row['name'];?>">
 								</div>
 								
 								<div class="mb-3">
 									<label class="form-label">Course Name</label>
-									<input type="text" class="form-control" name="course_name">
+									<input type="text" class="form-control" name="course_name" value="<?php echo $row['course_name'];?>">
 								</div>
 								
 								<div class="mb-3">
 									<label class="form-label">Batch</label>
-									<input type="number" class="form-control" name="batch">
+									<input type="number" class="form-control" name="batch" value="<?php echo $row['batch'];?>">
 								</div>
 								
 								<div class="mb-3">
 									<label class="form-label">Phone Number</label>
-									<input type="number" class="form-control" name="phone">
+									<input type="number" class="form-control" name="phone" value="<?php echo $row['phone'];?>">
 								</div>
 								
 								<div class="mb-3">
 									<label class="form-label">Email</label>
-									<input type="email" class="form-control" name="email">
+									<input type="email" class="form-control" name="email" value="<?php echo $row['email'];?>">
 								</div>
 								
 								<div class="mb-3">
 									<label class="form-label">Address</label>
-									<input type="text" class="form-control" name="address">
+									<input type="text" class="form-control" name="address" value="<?php echo $row['address'];?>">
 								</div>
 
 								<div>
