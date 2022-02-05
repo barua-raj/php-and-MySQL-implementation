@@ -97,7 +97,7 @@
 									  <td><?php echo $row['email']; ?></td>
 									  <td><?php echo $row['address']; ?></td>
 									  <td>
-										<a href="edit.php?student_id=<?php echo $row['id'] ?>" class="btn btn-secondary" target="_blank">Edit</a>
+										<a href="edit.php?student_id=<?php echo $row['id']?>" class="btn btn-secondary" target="_blank">Edit</a>
 										<a href="delete.php" class="btn btn-danger">Delete</a>
 									  </td>
 									</tr>

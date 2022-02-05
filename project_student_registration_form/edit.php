@@ -69,17 +69,45 @@
 				
 					<div class="col-lg-6">
 					
+						<?php
+							
+							if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+									
+									$name = $_POST['name'];
+									$course_name = $_POST['course_name'];
+									$batch = $_POST['batch'];
+									$phone = $_POST['phone'];
+									$email = $_POST['email'];
+									$address = $_POST['address'];
+									
+									$update = "UPDATE student_info SET name = '$name', course_name = '$course_name', batch = '$batch', phone = '$phone', email = '$email', address = '$address' WHERE id ='$id'";
+									
+									$update_result = $conn->query($update);
+									
+									if ($update_result) {
+										echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+										Your data is updated successgully!
+										<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+										</div>';
+									}
+									else {
+										echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+										Your data is not updated successfully!
+										<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+										</div>';
+									}
+									
+							}
+						
+						?>
+					
 						<div class="form-box">
 						
 						<?php
 						
-							$sql = "SELECT * from student_info WHERE student_id = '$id'";
-							
-							if($result = $conn->query($sql)){
-								while ($row = $result->fetch_assoc()) {
-									
-								}
-							}
+							$sql = "SELECT * from student_info WHERE id = '$id'";
+							$result = $conn->query($sql);
+							$row = $result->fetch_assoc();
 							
 						
 						?>
@@ -88,32 +116,32 @@
 							
 								<div class="mb-3">
 									<label class="form-label">Name</label>
-									<input type="text" class="form-control" name="name" value="<?php echo $row['name'];?>">
+									<input type="text" class="form-control" name="name" value="<?php echo $row['name']; ?>">
 								</div>
 								
 								<div class="mb-3">
 									<label class="form-label">Course Name</label>
-									<input type="text" class="form-control" name="course_name" value="<?php echo $row['course_name'];?>">
+									<input type="text" class="form-control" name="course_name" value="<?php echo $row['course_name']; ?>">
 								</div>
 								
 								<div class="mb-3">
 									<label class="form-label">Batch</label>
-									<input type="number" class="form-control" name="batch" value="<?php echo $row['batch'];?>">
+									<input type="number" class="form-control" name="batch" value="<?php echo $row['batch']; ?>">
 								</div>
 								
 								<div class="mb-3">
 									<label class="form-label">Phone Number</label>
-									<input type="number" class="form-control" name="phone" value="<?php echo $row['phone'];?>">
+									<input type="number" class="form-control" name="phone" value="<?php echo $row['phone']; ?>">
 								</div>
 								
 								<div class="mb-3">
 									<label class="form-label">Email</label>
-									<input type="email" class="form-control" name="email" value="<?php echo $row['email'];?>">
+									<input type="email" class="form-control" name="email" value="<?php echo $row['email']; ?>">
 								</div>
 								
 								<div class="mb-3">
 									<label class="form-label">Address</label>
-									<input type="text" class="form-control" name="address" value="<?php echo $row['address'];?>">
+									<input type="text" class="form-control" name="address" value="<?php echo $row['address']; ?>">
 								</div>
 
 								<div>
