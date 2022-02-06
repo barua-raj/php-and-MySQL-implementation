@@ -63,6 +63,30 @@
 				
 					<div class="col-sm-10">
 					
+						<?php
+							
+							
+							if (isset($_GET['student_id'])) {
+		
+								$id = $_GET['student_id'];
+								$sql = "DELETE FROM student_info WHERE id = '$id'";
+								$result = $conn->query($sql);
+							
+								if ($result) {
+									echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+										Your data is deleted successgully!
+										<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+										</div>';
+									}
+								else {
+									echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+										Your data is not deleted successfully!
+										<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+										</div>';
+									}
+							}
+							
+						?>
 					
 						<table class="table table-bordered table-striped">
 								  
@@ -97,8 +121,8 @@
 									  <td><?php echo $row['email']; ?></td>
 									  <td><?php echo $row['address']; ?></td>
 									  <td>
-										<a href="edit.php?student_id=<?php echo $row['id']?>" class="btn btn-secondary" target="_blank">Edit</a>
-										<a href="delete.php" class="btn btn-danger">Delete</a>
+										<a href="edit.php?student_id=<?php echo $row['id']; ?>" class="btn btn-secondary" target="_blank">Edit</a>
+										<a href="student_list.php?student_id=<?php echo $row['id']; ?>" class="btn btn-danger">Delete</a>
 									  </td>
 									</tr>
 									
