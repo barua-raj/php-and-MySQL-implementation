@@ -32,7 +32,7 @@
 					
 			?>
 					<tr>
-					<td>Abdur Rahim <?php echo $num; ?></td>
+					<td>Abdul Rahman <?php echo $num; ?></td>
 					<td>034</td>
 					<td>3.45</td>
 					</tr>
