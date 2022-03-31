@@ -8,7 +8,7 @@
 	<body>
 		
 		<?php
-			$fah = 626;
+			$fah = 630;
 			$cel = (($fah-32)*5)/9;
 			
 			echo '<h2>The farhenheit temperature '.$fah.' is equivalent to '.$cel.' degree celsius.<br></h2>';
